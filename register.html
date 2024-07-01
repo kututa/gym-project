@@ -11,70 +11,57 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="heading">BlackFITwarriors</h1>
-        <!-- <h3 class="title">Login & Registration Form</h3> -->
-    </header>
-
-    <!-- container div -->
-    <div class="container">
-
-        <!-- upper button section to select
-             the login or signup form -->
-        <div class="slider"></div>
-        <div class="btn">
-            <button class="login">Login</button>
-            <button class="signup">Signup</button>
-        </div>
-
-        <!-- Form section that contains the
-             login and the signup form -->
-        <div class="form-section">
-
-            <!-- login form -->
-            <div class="login-box">
-                <input type="email" 
-                       class="email ele" 
-                       placeholder="youremail@email.com">
-                <input type="tel"
-                       class="phone ele"
-                       placeholder="phone number">
-                <div class="password-container">
-                    <input type="password"
-                           class="password ele" 
-                           placeholder="password">
-                    <button class="show-password">Show</button>
-                </div>
-                <button class="clkbtn">Login</button>
+    
+        <header>
+            <h1 class="heading">BlackFITwarriors</h1>
+        </header>
+        <div class="container">
+            <div class="slider"></div>
+            <div class="btn">
+                <button class="login" onclick="showLogin()">Login</button>
+                <button class="signup" onclick="showSignup()">Signup</button>
             </div>
-
-            <!-- signup form -->
-            <div class="signup-box">
-                <input type="text" 
-                       class="name ele" 
-                       placeholder="Enter your name">
-                <input type="email" 
-                       class="email ele" 
-                       placeholder="youremail@email.com">
-                <input type="tel"
-                       class="phone ele"
-                       placeholder="phone number">
-                <div class="password-container">
-                    <input type="password" 
-                           class="password ele" 
-                           placeholder="password">
-                    <button class="show-password">Show</button>
-                </div>
-                <div class="password-container">
-                    <input type="password" 
-                           class="password ele" 
-                           placeholder="Confirm password">
-                    <button class="show-password">Show</button>
-                </div>
-                <button class="clkbtn">Signup</button>
+            <div class="form-section">
+                <form class="login-box" method="POST" action="backend.php">
+                    <input type="hidden" name="action" value="login">
+                    <input type="email" name="email" class="email ele" placeholder="youremail@email.com" required>
+                    <input type="tel" name="phone" class="phone ele" placeholder="phone number" required>
+                    <div class="password-container">
+                        <input type="password" name="password" class="password ele" placeholder="password" required>
+                        <button type="button" class="show-password">Show</button>
+                    </div>
+                    <button type="submit" class="clkbtn">Login</button>
+                </form>
+                <form class="signup-box" method="POST" action="backend.php">
+                    <input type="hidden" name="action" value="signup">
+                    <input type="text" name="name" class="name ele" placeholder="Enter your name" required>
+                    <input type="email" name="email" class="email ele" placeholder="youremail@email.com" required>
+                    <input type="tel" name="phone" class="phone ele" placeholder="phone number" required>
+                    <div class="password-container">
+                        <input type="password" name="password" class="password ele" placeholder="password" required>
+                        <button type="button" class="show-password">Show</button>
+                    </div>
+                    <div class="password-container">
+                        <input type="password" name="confirm_password" class="password ele" placeholder="Confirm password" required>
+                        <button type="button" class="show-password">Show</button>
+                    </div>
+                    <button type="submit" class="clkbtn">Signup</button>
+                </form>
             </div>
         </div>
-    </div>
+        <!-- <script>
+            function showLogin() {
+                document.querySelector('.login-box').style.display = 'block';
+                document.querySelector('.signup-box').style.display = 'none';
+            }
+            
+            function showSignup() {
+                document.querySelector('.login-box').style.display = 'none';
+                document.querySelector('.signup-box').style.display = 'block';
+            }
+        </script> -->
+    
+
     <!-- <script src="index.js"></script> -->
 
 
