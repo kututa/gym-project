@@ -9,3 +9,4 @@ CREATE TABLE users (
     phone VARCHAR(20),
     password VARCHAR(255)
 );
+
